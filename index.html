@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ProfComServ | Стресс-тест телефона и SMS-бомбинг</title>
+    <title>ProfComServ | Телефонный флуд и стресс-тест | 2009–2026</title>
+    <meta name="description" content="Профессиональный телефонный флуд, SMS-бомбинг, стресс-тест каналов. Новые цены с 21 марта 2026. Работаем с 2009 года. Анонимно, надёжно, живой оператор 24/7.">
+    <meta name="keywords" content="флуд звонками, телефонный спам, SMS бомбер, стресс-тест телефона, заказать флуд, TDoS, SIP флуд, GSM флуд">
+    <meta property="og:title" content="ProfComServ — Профессиональный телефонный флуд и стресс-тест | 2009–2026">
+    <meta property="og:description" content="Актуальные цены с 21 марта 2026. Мощные тарифы: Премиум (SIP, чёрный список бесполезен), Стандарт, Бюджет.">
+    <meta property="og:url" content="https://profcomserv.github.io/">
+    <link rel="canonical" href="https://profcomserv.github.io/">
     <style>
         * {
             margin: 0;
@@ -13,10 +19,9 @@
 
         body {
             font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
-            background: linear-gradient(145deg, #0b0c15 0%, #12141c 100%);
+            background: radial-gradient(circle at 10% 20%, #0a0a0f, #030305);
             color: #eef2ff;
             line-height: 1.5;
-            scroll-behavior: smooth;
         }
 
         .container {
@@ -25,10 +30,14 @@
             padding: 0 24px;
         }
 
-        /* Header */
         .header {
             padding: 20px 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: sticky;
+            top: 0;
+            background: rgba(3, 3, 5, 0.9);
+            backdrop-filter: blur(12px);
+            z-index: 100;
         }
 
         .nav {
@@ -36,13 +45,14 @@
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
-            gap: 16px;
+            gap: 20px;
         }
 
         .logo {
             font-size: 28px;
             font-weight: 800;
-            background: linear-gradient(135deg, #fff, #7c3aed);
+            letter-spacing: -0.5px;
+            background: linear-gradient(135deg, #ffffff, #7c3aed, #a855f7);
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
@@ -64,7 +74,6 @@
             color: #a78bfa;
         }
 
-        /* Buttons */
         .btn {
             display: inline-flex;
             align-items: center;
@@ -77,6 +86,7 @@
             text-decoration: none;
             transition: all 0.3s ease;
             border: 1px solid rgba(255, 255, 255, 0.05);
+            cursor: pointer;
         }
 
         .btn-primary {
@@ -100,13 +110,12 @@
             transform: scale(0.98);
         }
 
-        /* Hero section */
         .hero {
             display: flex;
             flex-wrap: wrap;
             align-items: center;
             justify-content: space-between;
-            padding: 60px 0 80px;
+            padding: 60px 0 40px;
             gap: 40px;
         }
 
@@ -127,7 +136,7 @@
         }
 
         .hero h1 {
-            font-size: 48px;
+            font-size: 52px;
             line-height: 1.2;
             font-weight: 800;
             margin-bottom: 24px;
@@ -150,23 +159,23 @@
             flex-wrap: wrap;
         }
 
-        .hero-image {
+        .hero-video {
             flex: 1;
-            text-align: center;
-            background: radial-gradient(circle at center, rgba(124, 58, 237, 0.2), transparent 70%);
-            padding: 30px 20px;
-            border-radius: 60px;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 0 25px 40px -12px rgba(0,0,0,0.8);
+            border: 1px solid rgba(124,58,237,0.3);
         }
 
-        .hero-image img {
-            max-width: 100%;
-            filter: drop-shadow(0 0 15px rgba(124,58,237,0.4));
+        .hero-video iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
         }
 
-        /* Features grid */
         .section-title {
             text-align: center;
-            font-size: 36px;
+            font-size: 38px;
             font-weight: 700;
             margin-bottom: 16px;
         }
@@ -179,24 +188,24 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
             gap: 32px;
             margin-bottom: 80px;
         }
 
         .feature-card {
             background: #141622;
-            padding: 32px 24px;
             border-radius: 32px;
-            transition: all 0.3s;
-            border: 1px solid #25283a;
+            padding: 32px 24px;
             text-align: center;
+            border: 1px solid #25283a;
+            transition: all 0.3s;
         }
 
         .feature-card:hover {
             transform: translateY(-8px);
             border-color: #7c3aed;
-            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.5);
+            box-shadow: 0 20px 30px -15px #7c3aed30;
         }
 
         .feature-icon {
@@ -213,8 +222,157 @@
             color: #9ca3af;
         }
 
-        /* Bots row */
-        .bots-section {
+        .text-block {
+            background: #0f1119;
+            border-radius: 48px;
+            padding: 48px 32px;
+            margin: 60px 0;
+            border: 1px solid #25283a;
+        }
+
+        .text-block h2 {
+            font-size: 32px;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #fff, #c084fc);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            display: inline-block;
+        }
+
+        .text-block p {
+            margin-bottom: 20px;
+            color: #cbd5e6;
+            line-height: 1.6;
+        }
+
+        .text-block ul, .benefits-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .text-block li, .benefits-list li {
+            margin-bottom: 12px;
+            padding-left: 28px;
+            position: relative;
+        }
+
+        .text-block li::before, .benefits-list li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+            color: #c084fc;
+        }
+
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .benefit-item {
+            background: #141622;
+            padding: 24px;
+            border-radius: 24px;
+            border: 1px solid #2e2c42;
+        }
+
+        .benefit-item strong {
+            color: #c084fc;
+        }
+
+        .tariffs-section {
+            background: #0f1119;
+            border-radius: 48px;
+            padding: 48px 32px;
+            margin: 60px 0;
+            border: 1px solid #25283a;
+        }
+
+        .tariffs-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 32px;
+            margin: 40px 0 20px;
+        }
+
+        .tariff-card {
+            background: #141622;
+            border-radius: 32px;
+            padding: 32px 28px;
+            width: 340px;
+            border: 1px solid #2e2c42;
+            transition: all 0.3s;
+            text-align: center;
+            flex: 1 1 300px;
+        }
+
+        .tariff-card:hover {
+            transform: translateY(-8px);
+            border-color: #7c3aed;
+            box-shadow: 0 20px 30px -15px #7c3aed30;
+        }
+
+        .tariff-name {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            background: linear-gradient(135deg, #fff, #a78bfa);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .tariff-desc {
+            font-size: 14px;
+            color: #a78bfa;
+            margin-bottom: 20px;
+            border-bottom: 1px dashed #2e2c42;
+            padding-bottom: 12px;
+        }
+
+        .price-item {
+            margin: 16px 0;
+            border-bottom: 1px solid #25283a;
+            padding-bottom: 12px;
+        }
+
+        .price-duration {
+            font-size: 16px;
+            color: #cbd5e6;
+        }
+
+        .price-amount {
+            font-size: 28px;
+            font-weight: 800;
+            color: #c084fc;
+            margin: 8px 0;
+        }
+
+        .price-note {
+            font-size: 13px;
+            color: #8b8fab;
+        }
+
+        .flow-info {
+            background: #1b1e2d;
+            border-radius: 24px;
+            padding: 24px;
+            margin-top: 40px;
+            text-align: left;
+            font-size: 14px;
+            color: #b4b9d0;
+            border: 1px solid #2e2c42;
+        }
+
+        .flow-info h4 {
+            color: #c084fc;
+            margin-bottom: 12px;
+        }
+
+        .video-section {
             background: #0f1119;
             border-radius: 48px;
             padding: 48px 32px;
@@ -223,54 +381,72 @@
             border: 1px solid #25283a;
         }
 
-        .bots-grid {
-            display: flex;
-            justify-content: center;
-            flex-wrap: wrap;
-            gap: 30px;
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 24px;
             margin-top: 40px;
         }
 
-        .bot-card {
+        .video-item {
             background: #1b1e2d;
             border-radius: 24px;
-            padding: 28px 32px;
-            width: 240px;
+            overflow: hidden;
             transition: all 0.2s;
-            text-decoration: none;
-            color: white;
             border: 1px solid #2e2c42;
         }
 
-        .bot-card:hover {
+        .video-item:hover {
             border-color: #a855f7;
             transform: scale(1.02);
         }
 
-        .bot-name {
-            font-weight: 700;
-            font-size: 18px;
-            margin-top: 12px;
+        .video-item iframe {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            display: block;
         }
 
-        .bot-username {
-            font-size: 13px;
-            color: #a78bfa;
-            word-break: break-all;
+        .video-title {
+            padding: 12px 16px;
+            font-weight: 600;
+            background: #141622;
         }
 
-        .call-action {
-            background: linear-gradient(125deg, #1a1b2b, #0b0c15);
+        .contacts-section {
+            background: #0f1119;
             border-radius: 48px;
-            padding: 56px 32px;
+            padding: 48px 32px;
+            margin: 60px 0;
             text-align: center;
-            margin-bottom: 60px;
-            border: 1px solid #2d2f42;
+            border: 1px solid #25283a;
         }
 
-        .call-action h2 {
-            font-size: 32px;
-            margin-bottom: 20px;
+        .contacts-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 40px;
+        }
+
+        .contact-item {
+            background: #1b1e2d;
+            padding: 14px 24px;
+            border-radius: 60px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+            border: 1px solid #2e2c42;
+            font-size: 15px;
+        }
+
+        .contact-item:hover {
+            border-color: #a855f7;
+            transform: scale(1.02);
         }
 
         footer {
@@ -278,113 +454,327 @@
             padding: 40px 0;
             border-top: 1px solid #1e2132;
             color: #6b7280;
+            font-size: 14px;
+        }
+
+        .price-update {
+            background: #7c3aed20;
+            border-left: 4px solid #7c3aed;
+            padding: 12px 20px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            font-weight: 500;
+            text-align: center;
         }
 
         @media (max-width: 768px) {
             .hero h1 {
                 font-size: 36px;
             }
-            .container {
-                padding: 0 20px;
+            .tariff-card {
+                width: 100%;
             }
             .nav-links {
-                gap: 20px;
+                gap: 16px;
+            }
+            .container {
+                padding: 0 16px;
+            }
+            .text-block {
+                padding: 32px 20px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
+    <div class="header">
+        <div class="container">
             <div class="nav">
                 <div class="logo">⚡ ProfComServ</div>
                 <div class="nav-links">
                     <a href="#services">Услуги</a>
-                    <a href="#bots">Боты</a>
-                    <a href="#contact">Контакты</a>
+                    <a href="#tariffs">Тарифы</a>
+                    <a href="#demo">Демо</a>
+                    <a href="#reviews">Отзывы</a>
+                    <a href="#contacts">Контакты</a>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- Hero -->
+    <div class="container">
+        <!-- Hero с первым видео -->
         <div class="hero">
             <div class="hero-content">
-                <div class="hero-badge">✅ 15 лет опыта | Легендарный сервис</div>
-                <h1>Стресс-тест телефона.<br>Профессиональный флуд.</h1>
-                <p>Проверь устойчивость каналов связи или используй мощный инструмент для нагрузочного тестирования. Связь с живым оператором 24/7.</p>
+                <div class="hero-badge">✅ 15 лет опыта | Легендарный сервис | 2009–2026</div>
+                <h1>Стресс-тест телефона.<br>Флуд звонками и SMS.</h1>
+                <p>Профессиональный телефонный флуд со спуфингом номера. Полная анонимность, работаем по всему миру 24/7. Живой оператор на связи.</p>
                 <div class="hero-buttons">
                     <a href="https://t.me/ProfComServBot" target="_blank" class="btn btn-primary">📱 Связаться с оператором</a>
-                    <a href="#bots" class="btn btn-outline">🤖 Наши боты</a>
+                    <a href="#tariffs" class="btn btn-outline">💰 Актуальные тарифы</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <!-- SVG или placeholder — стилизованный -->
-                <div style="font-size: 120px;">🔥📞</div>
+            <div class="hero-video">
+                <iframe src="https://www.youtube.com/embed/XXbhJgpbsX8" title="ProfComServ демо" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
 
-        <!-- Услуги -->
+        <!-- Услуги (6 пунктов) -->
         <div id="services">
             <h2 class="section-title">Что мы предлагаем?</h2>
             <div class="section-sub">Мощные инструменты для проверки каналов связи</div>
             <div class="features-grid">
                 <div class="feature-card">
                     <div class="feature-icon">📞</div>
-                    <h3>Флуд звонками</h3>
-                    <p>Автоматические вызовы на указанный номер с высокой интенсивностью.</p>
+                    <h3>SIP-флуд</h3>
+                    <p>Максимальная масштабируемость, гибкая настройка, полная анонимность. Лучший выбор для массовых атак.</p>
                 </div>
                 <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>SMS-бомбинг</h3>
-                    <p>Массовая отправка сообщений через шлюзы операторов.</p>
+                    <div class="feature-icon">📡</div>
+                    <h3>GSM-флуд</h3>
+                    <p>Собственное GSM-устройство ProfComServ для генерации вызовов с поддержкой аудиосообщений, DTMF и SMS.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🌍</div>
-                    <h3>Мировая инфраструктура</h3>
-                    <p>Поддержка любых стран и мобильных операторов.</p>
+                    <h3>Глобальное покрытие</h3>
+                    <p>Работаем с любыми странами и мобильными операторами. Полный контроль над целевыми номерами по всему миру.</p>
                 </div>
                 <div class="feature-card">
                     <div class="feature-icon">🛡️</div>
-                    <h3>Спуфинг (подмена)</h3>
-                    <p>Отображение любого желаемого номера для более реалистичного теста.</p>
+                    <h3>Спуфинг и анонимность</h3>
+                    <p>Подмена Caller ID и полная рандомизация номера. Черные списки бесполезны — 100% анонимность.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">⚡</div>
+                    <h3>Мгновенный старт</h3>
+                    <p>Запуск атаки сразу после оплаты, без задержек и согласований. Ценим ваше время.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">📊</div>
+                    <h3>Детальная статистика</h3>
+                    <p>Подробные отчёты по каждому заказу: скриншоты, графики нагрузки, количество звонков/ответов.</p>
                 </div>
             </div>
         </div>
 
-        <!-- Боты -->
-        <div id="bots" class="bots-section">
-            <h2 style="font-size: 32px;">🤖 Наши официальные боты</h2>
-            <p style="margin-top: 12px;">Нажми на любого бота — сразу перейдёшь в Telegram</p>
-            <div class="bots-grid">
-                <a href="https://t.me/ProfComServBot" target="_blank" class="bot-card">
-                    <div style="font-size: 44px;">🥷</div>
-                    <div class="bot-name">ProfComServBot</div>
-                    <div class="bot-username">@ProfComServBot</div>
-                </a>
-                <a href="https://t.me/CallFloodProfBot" target="_blank" class="bot-card">
-                    <div style="font-size: 44px;">📢</div>
-                    <div class="bot-name">CallFloodProfBot</div>
-                    <div class="bot-username">@CallFloodProfBot</div>
-                </a>
-                <a href="https://t.me/PhoneFloodBot" target="_blank" class="bot-card">
-                    <div style="font-size: 44px;">📳</div>
-                    <div class="bot-name">PhoneFloodBot</div>
-                    <div class="bot-username">@PhoneFloodBot</div>
-                </a>
-            </div>
-            <p style="margin-top: 40px;">💬 Все боты ведут к живому оператору — мы работаем 24/7</p>
+        <!-- Что такое телефонный флуд + преимущества -->
+        <div class="text-block">
+            <h2>📌 Что такое «телефонный флуд»?</h2>
+            <p>Флуд (от англ. flood — наводнение, затопление) — на телефон цели непрерывно поступают звонки. Мы предлагаем исключительную услугу непрерывного телефонного флуда — мощный инструмент для занятости линии оппонента и предотвращения доступа других абонентов. В ProfComServ.com мы гордимся предоставлением передовых решений, обеспечивающих безопасность вашего бизнеса. Наша команда экспертов работает по всему миру, предлагая неограниченные возможности для достижения ваших целей.</p>
+            <p>С ProfComServ.com вы получаете не просто услугу, вы получаете конкурентное преимущество. Наша беспощадная услуга телефонного флуда обеспечивает молчание у ваших соперников, не позволяя им препятствовать вашему прогрессу. Независимо от того, нужно ли вам защитить свою позицию на рынке, противостоять агрессивным тактикам или отпугнуть злонамеренные намерения, наши комплексные решения помогут вам оставаться впереди.</p>
+            <p>Пользуйтесь нашей обширной глобальной сетью, так как мы обслуживаем клиентов по всему миру, облегчая расширение вашего бизнеса за границы. Наша преданная команда доступна 24/7, готова удовлетворить ваши уникальные потребности и предоставить персонализированную поддержку. Будучи пионерами в этой отрасли, мы понимаем важность сохранения лидирующей позиции в конкурентной среде. Именно поэтому мы постоянно обновляем нашу технологию, обеспечивая передовые и непревзойденные услуги.</p>
         </div>
 
-        <!-- Contact / Call to action -->
-        <div id="contact" class="call-action">
-            <h2>Нужна консультация?</h2>
-            <p style="margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto;">Напиши оператору напрямую. Расскажем про тарифы, возможности и поможем с настройкой.</p>
-            <a href="https://t.me/ProfComServBot" target="_blank" class="btn btn-primary" style="font-size: 18px; padding: 14px 40px;">🚀 Перейти в бота</a>
+        <!-- Почему выбирают нас -->
+        <div class="text-block">
+            <h2>✅ Почему выбирают нас?</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item"><strong>🔹 Бесплатный демонстрационный тест</strong><br>До 20 минут на новый номер, чтобы вы могли оценить мощность.</div>
+                <div class="benefit-item"><strong>🔹 Стабильный эффект</strong><br>На протяжении всего срока заказа. Мгновенное реагирование на неполадки.</div>
+                <div class="benefit-item"><strong>🔹 Мониторинг цели</strong><br>Контрольные звонки не реже трёх раз в сутки. Статистика по запросу (скриншот).</div>
+                <div class="benefit-item"><strong>🔹 Полная конфиденциальность</strong><br>Ваши данные не разглашаются. Анонимность гарантирована.</div>
+                <div class="benefit-item"><strong>🔹 Поддержка 24/7/365</strong><br>Без праздников и выходных. Оперативные ответы.</div>
+                <div class="benefit-item"><strong>🔹 Возврат средств</strong><br>В случае отмены или невыполнения заказа.</div>
+            </div>
+            <p style="margin-top: 20px;"><strong>Визуально отличить легитимные звонки от наших невозможно.</strong> Весь флуд со 100% рандомизацией номера. Чёрный список бесполезен.</p>
+        </div>
+
+        <!-- Условия бесплатного теста -->
+        <div class="text-block">
+            <h2>🎁 Бесплатный демонстрационный тест</h2>
+            <p><strong>Условия:</strong></p>
+            <ul>
+                <li>Тест производится на 1 телефонный номер до 20 минут, мощностью в 4 потока (или на усмотрение оператора). Номер должен быть доступен вам для проверки.</li>
+                <li>Для получения теста необходимо подать заявку. Пример: <code>4 потока, +1234567890, 15.04.26 с 14.25 до 14.45 по мск</code>.</li>
+                <li>На многоканальные телефоны тест не предоставляется.</li>
+                <li>Оператор вправе досрочно прервать или отказать в проведении теста без объяснения причин.</li>
+            </ul>
+            <p>Подать заявку можно через <a href="https://t.me/ProfComServBot" target="_blank" style="color:#c084fc;">нашего бота</a> или написав оператору в Telegram / WhatsApp.</p>
+        </div>
+
+        <!-- Для чего это может пригодиться -->
+        <div class="text-block">
+            <h2>⚡ Для чего это может пригодиться?</h2>
+            <ul>
+                <li><strong>Конкурентная борьба</strong> — лишить возможности принимать звонки от клиентов означает лишить бизнеса.</li>
+                <li><strong>Голосование по телефону</strong> — вы можете «накрутить» счётчик.</li>
+                <li><strong>Вас обидели?</strong> — заставьте человека понервничать.</li>
+                <li><strong>Вам надоедают?</strong> — пара бессонных ночей гарантированно снизит активность.</li>
+                <li>И прочее, прочее, прочее… Мы могли бы сделать этот список бесконечным, но оставим место для полёта вашей фантазии.</li>
+            </ul>
+        </div>
+
+        <!-- Тарифы (актуальные) -->
+        <div id="tariffs" class="tariffs-section">
+            <h2 class="section-title">Актуальные тарифы</h2>
+            <div class="section-sub">Цены указаны в USD. С 21 марта 2026 года — новая индексация.</div>
+            <div class="price-update">
+                📢 С 21 марта 2026 года мы были вынуждены проиндексировать цены. Представленные тарифы — актуальны.
+            </div>
+            <div class="tariffs-grid">
+                <!-- Премиум -->
+                <div class="tariff-card">
+                    <div class="tariff-name">Премиум</div>
+                    <div class="tariff-desc">SIP-телефония (чёрный список бесполезен)</div>
+                    <div class="price-item">
+                        <div class="price-duration">1 час</div>
+                        <div class="price-amount">20 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">12 часов</div>
+                        <div class="price-amount">120 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">Сутки (24 часа)</div>
+                        <div class="price-amount">190 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">7 суток</div>
+                        <div class="price-amount">770 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                </div>
+
+                <!-- Стандарт SIP -->
+                <div class="tariff-card">
+                    <div class="tariff-name">Стандарт</div>
+                    <div class="tariff-desc">SIP (ограничение по ответам)</div>
+                    <div class="price-item">
+                        <div class="price-duration">1 час (до 30 ответов)</div>
+                        <div class="price-amount">15 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">12 часов (до 190 ответов)</div>
+                        <div class="price-amount">75 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">Сутки (до 250 ответов)</div>
+                        <div class="price-amount">150 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">7 суток</div>
+                        <div class="price-amount">560 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                </div>
+
+                <!-- Бюджет -->
+                <div class="tariff-card">
+                    <div class="tariff-name">Бюджет</div>
+                    <div class="tariff-desc">Пул до 70 номеров</div>
+                    <div class="price-item">
+                        <div class="price-duration">1 час</div>
+                        <div class="price-amount">10 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">12 часов</div>
+                        <div class="price-amount">50 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                    <div class="price-item">
+                        <div class="price-duration">Сутки</div>
+                        <div class="price-amount">90 $</div>
+                        <div class="price-note">1 поток на номер</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flow-info">
+                <h4>📌 Что такое поток?</h4>
+                <p>Поток — количество исходящих линий, одновременно производящих вызовы на телефон. <strong>1 поток способен генерировать только 1 звонок за раз.</strong> Вызовы следуют один за другим. При 1 потоке стандартный тайм-аут между окончанием одного вызова и началом другого составляет 25-35 секунд. <strong>1 поток ≈ 1-3 звонка в минуту.</strong> Чем больше потоков, тем чаще звонки.</p>
+                <p style="margin-top: 12px;"><strong>🌍 Номера других стран:</strong> по договорённости, при наличии маршрутов по конкретным регионам.</p>
+            </div>
+        </div>
+
+        <!-- Демонстрация работы (два видео) -->
+        <div id="demo" class="video-section">
+            <h2 style="font-size: 32px;">📹 Демонстрация работы</h2>
+            <p style="margin-top: 12px;">Наглядные примеры мощности нашей инфраструктуры</p>
+            <div class="video-grid">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/EHHvnCo1X04?start=40" title="When Calls Bring Money!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">When Calls Bring Money!</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/9t0lbZ50ctU" title="БОМБЕР ТЕЛЕФОНА!" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">БОМБЕР ТЕЛЕФОНА!</div>
+                </div>
+            </div>
+            <p style="margin-top: 32px; color: #8b8fab;">Больше видео на нашем <a href="https://www.youtube.com/@ProfComServ" target="_blank" style="color: #c084fc;">YouTube-канале</a>.</p>
+        </div>
+
+        <!-- Видеоотзывы клиентов (включая №29) -->
+        <div id="reviews" class="video-section">
+            <h2 style="font-size: 32px;">📹 Видеоотзывы клиентов</h2>
+            <p style="margin-top: 12px;">Реальные отзывы и впечатления от наших услуг</p>
+            <div class="video-grid">
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/UXRTKve8ztQ" title="Видео отзыв №1" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №1</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/rrY3SxUstaw" title="Видео отзыв №2" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №2</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/nMZ3vt7B9wk" title="Видео отзыв №3" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №3</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/sta5BLkVY1g" title="Видео отзыв №4" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №4</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/09bR4GECK7Q" title="Видео отзыв №5" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №5</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/T8-guMRHr3o" title="Видео отзыв №6" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №6</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/pRCEzsl4gW8" title="Видео отзыв №12" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №12</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/v_4HC5ljN7k" title="Видео отзыв №28" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №28</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/kIH65Uvi7Dw" title="Видео отзыв №27" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №27</div>
+                </div>
+                <div class="video-item">
+                    <iframe src="https://www.youtube.com/embed/SyYHByLobxk" title="Видео отзыв №29" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <div class="video-title">Видео отзыв №29</div>
+                </div>
+            </div>
+            <p style="margin-top: 32px; color: #8b8fab;">Больше отзывов и видео о нашей работе вы можете найти на нашем <a href="https://www.youtube.com/@ProfComServ" target="_blank" style="color: #c084fc;">YouTube-канале</a>.</p>
+        </div>
+
+        <!-- Контакты -->
+        <div id="contacts" class="contacts-section">
+            <h2 style="font-size: 32px;">📞 Свяжись с нами</h2>
+            <p style="margin-top: 12px;">Живой оператор ответит на все вопросы 24/7</p>
+            <div class="contacts-grid">
+                <a href="https://t.me/ProfComServCom" target="_blank" class="contact-item">📱 Telegram: @ProfComServCom</a>
+                <a href="https://api.whatsapp.com/send?phone=79853050893" target="_blank" class="contact-item">💬 WhatsApp: +7-985-305-08-93</a>
+                <a href="mailto:ProfComServ@gmail.com" class="contact-item">📧 Email: ProfComServ@gmail.com</a>
+                <div class="contact-item">💬 WeChat ID: ProfComServ</div>
+                <a href="https://www.youtube.com/@ProfComServ" target="_blank" class="contact-item">▶️ YouTube: @ProfComServ</a>
+            </div>
         </div>
 
         <footer>
-            <p>© 2026 ProfComServ | Легендарный сервис нагрузочного тестирования</p>
-            <p style="margin-top: 8px; font-size: 14px;">Для законных целей: проверка собственных номеров или систем безопасности.</p>
+            <p>© 2009–2026 ProfComServ | Легендарный сервис нагрузочного тестирования</p>
+            <p style="margin-top: 8px;">Для законных целей: проверка собственных номеров или систем безопасности.</p>
         </footer>
     </div>
 </body>
