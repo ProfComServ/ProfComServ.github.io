@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ProfComServ | Стресс-тест телефона и SMS-бомбинг</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(145deg, #0b0c15 0%, #12141c 100%);
+            color: #eef2ff;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Header */
+        .header {
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .logo {
+            font-size: 28px;
+            font-weight: 800;
+            background: linear-gradient(135deg, #fff, #7c3aed);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            color: #cbd5e6;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+        }
+
+        .nav-links a:hover {
+            color: #a78bfa;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: #2d2f3e;
+            color: #eef2ff;
+            padding: 12px 28px;
+            border-radius: 40px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .btn-primary {
+            background: linear-gradient(95deg, #7c3aed, #a855f7);
+            box-shadow: 0 8px 20px -8px rgba(124, 58, 237, 0.4);
+            border: none;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 25px -12px #7c3aed;
+        }
+
+        .btn-outline {
+            border: 1px solid #7c3aed;
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            background: rgba(124, 58, 237, 0.1);
+            transform: scale(0.98);
+        }
+
+        /* Hero section */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            padding: 60px 0 80px;
+            gap: 40px;
+        }
+
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-badge {
+            background: #1e1b2f;
+            display: inline-block;
+            padding: 6px 14px;
+            border-radius: 40px;
+            font-size: 14px;
+            font-weight: 500;
+            color: #c084fc;
+            margin-bottom: 20px;
+            border: 1px solid #2e2a44;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 24px;
+            background: linear-gradient(145deg, #ffffff, #b9a9ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero p {
+            font-size: 18px;
+            color: #9ca3af;
+            margin-bottom: 32px;
+            max-width: 540px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-image {
+            flex: 1;
+            text-align: center;
+            background: radial-gradient(circle at center, rgba(124, 58, 237, 0.2), transparent 70%);
+            padding: 30px 20px;
+            border-radius: 60px;
+        }
+
+        .hero-image img {
+            max-width: 100%;
+            filter: drop-shadow(0 0 15px rgba(124,58,237,0.4));
+        }
+
+        /* Features grid */
+        .section-title {
+            text-align: center;
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 16px;
+        }
+
+        .section-sub {
+            text-align: center;
+            color: #8b8fab;
+            margin-bottom: 56px;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-bottom: 80px;
+        }
+
+        .feature-card {
+            background: #141622;
+            padding: 32px 24px;
+            border-radius: 32px;
+            transition: all 0.3s;
+            border: 1px solid #25283a;
+            text-align: center;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-8px);
+            border-color: #7c3aed;
+            box-shadow: 0 20px 30px -15px rgba(0,0,0,0.5);
+        }
+
+        .feature-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 24px;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: #9ca3af;
+        }
+
+        /* Bots row */
+        .bots-section {
+            background: #0f1119;
+            border-radius: 48px;
+            padding: 48px 32px;
+            margin: 60px 0;
+            text-align: center;
+            border: 1px solid #25283a;
+        }
+
+        .bots-grid {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin-top: 40px;
+        }
+
+        .bot-card {
+            background: #1b1e2d;
+            border-radius: 24px;
+            padding: 28px 32px;
+            width: 240px;
+            transition: all 0.2s;
+            text-decoration: none;
+            color: white;
+            border: 1px solid #2e2c42;
+        }
+
+        .bot-card:hover {
+            border-color: #a855f7;
+            transform: scale(1.02);
+        }
+
+        .bot-name {
+            font-weight: 700;
+            font-size: 18px;
+            margin-top: 12px;
+        }
+
+        .bot-username {
+            font-size: 13px;
+            color: #a78bfa;
+            word-break: break-all;
+        }
+
+        .call-action {
+            background: linear-gradient(125deg, #1a1b2b, #0b0c15);
+            border-radius: 48px;
+            padding: 56px 32px;
+            text-align: center;
+            margin-bottom: 60px;
+            border: 1px solid #2d2f42;
+        }
+
+        .call-action h2 {
+            font-size: 32px;
+            margin-bottom: 20px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 40px 0;
+            border-top: 1px solid #1e2132;
+            color: #6b7280;
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 36px;
+            }
+            .container {
+                padding: 0 20px;
+            }
+            .nav-links {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div class="nav">
+                <div class="logo">⚡ ProfComServ</div>
+                <div class="nav-links">
+                    <a href="#services">Услуги</a>
+                    <a href="#bots">Боты</a>
+                    <a href="#contact">Контакты</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Hero -->
+        <div class="hero">
+            <div class="hero-content">
+                <div class="hero-badge">✅ 15 лет опыта | Легендарный сервис</div>
+                <h1>Стресс-тест телефона.<br>Профессиональный флуд.</h1>
+                <p>Проверь устойчивость каналов связи или используй мощный инструмент для нагрузочного тестирования. Связь с живым оператором 24/7.</p>
+                <div class="hero-buttons">
+                    <a href="https://t.me/ProfComServBot" target="_blank" class="btn btn-primary">📱 Связаться с оператором</a>
+                    <a href="#bots" class="btn btn-outline">🤖 Наши боты</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- SVG или placeholder — стилизованный -->
+                <div style="font-size: 120px;">🔥📞</div>
+            </div>
+        </div>
+
+        <!-- Услуги -->
+        <div id="services">
+            <h2 class="section-title">Что мы предлагаем?</h2>
+            <div class="section-sub">Мощные инструменты для проверки каналов связи</div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">📞</div>
+                    <h3>Флуд звонками</h3>
+                    <p>Автоматические вызовы на указанный номер с высокой интенсивностью.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">💬</div>
+                    <h3>SMS-бомбинг</h3>
+                    <p>Массовая отправка сообщений через шлюзы операторов.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🌍</div>
+                    <h3>Мировая инфраструктура</h3>
+                    <p>Поддержка любых стран и мобильных операторов.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">🛡️</div>
+                    <h3>Спуфинг (подмена)</h3>
+                    <p>Отображение любого желаемого номера для более реалистичного теста.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Боты -->
+        <div id="bots" class="bots-section">
+            <h2 style="font-size: 32px;">🤖 Наши официальные боты</h2>
+            <p style="margin-top: 12px;">Нажми на любого бота — сразу перейдёшь в Telegram</p>
+            <div class="bots-grid">
+                <a href="https://t.me/ProfComServBot" target="_blank" class="bot-card">
+                    <div style="font-size: 44px;">🥷</div>
+                    <div class="bot-name">ProfComServBot</div>
+                    <div class="bot-username">@ProfComServBot</div>
+                </a>
+                <a href="https://t.me/CallFloodProfBot" target="_blank" class="bot-card">
+                    <div style="font-size: 44px;">📢</div>
+                    <div class="bot-name">CallFloodProfBot</div>
+                    <div class="bot-username">@CallFloodProfBot</div>
+                </a>
+                <a href="https://t.me/PhoneFloodBot" target="_blank" class="bot-card">
+                    <div style="font-size: 44px;">📳</div>
+                    <div class="bot-name">PhoneFloodBot</div>
+                    <div class="bot-username">@PhoneFloodBot</div>
+                </a>
+            </div>
+            <p style="margin-top: 40px;">💬 Все боты ведут к живому оператору — мы работаем 24/7</p>
+        </div>
+
+        <!-- Contact / Call to action -->
+        <div id="contact" class="call-action">
+            <h2>Нужна консультация?</h2>
+            <p style="margin-bottom: 28px; max-width: 600px; margin-left: auto; margin-right: auto;">Напиши оператору напрямую. Расскажем про тарифы, возможности и поможем с настройкой.</p>
+            <a href="https://t.me/ProfComServBot" target="_blank" class="btn btn-primary" style="font-size: 18px; padding: 14px 40px;">🚀 Перейти в бота</a>
+        </div>
+
+        <footer>
+            <p>© 2026 ProfComServ | Легендарный сервис нагрузочного тестирования</p>
+            <p style="margin-top: 8px; font-size: 14px;">Для законных целей: проверка собственных номеров или систем безопасности.</p>
+        </footer>
+    </div>
+</body>
+</html>
